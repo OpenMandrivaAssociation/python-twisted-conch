@@ -9,7 +9,6 @@ Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%directory_down/Twisted
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
-BuildRoot:      %{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
 
