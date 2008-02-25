@@ -1,11 +1,15 @@
+%define name python-twisted-conch
+%define version 0.8.0
+%define release %mkrel 1
 
+%define progname TwistedConch
 
 Summary:        An SSH and SFTP protocol implementation together with clients and servers 
-Name:           python-twisted-conch
-Version:        0.7.0
+Name:           %name
+Version:        %version
 %define directory_down %(echo %version|perl -n -e  '/^(\d+\.\d+).*$/; print \$1 ')
-Release:        %mkrel 2
-Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%directory_down/TwistedConch-%{version}.tar.bz2
+Release:        %release
+Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%directory_down/%{progname}-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
@@ -26,7 +30,7 @@ A new implementation of Twisted's Manhole application is also included,
 featuring server-side input history and interactive syntax coloring.
 
 %prep
-%setup -q -n TwistedConch-%version
+%setup -q -n %{progname}-%version
 
 %build
 %__python setup.py build
