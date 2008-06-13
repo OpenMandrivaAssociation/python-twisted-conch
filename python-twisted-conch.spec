@@ -1,5 +1,5 @@
 %define name python-twisted-conch
-%define version 0.8.0
+%define version 8.1.0
 %define release %mkrel 1
 
 %define progname TwistedConch
@@ -7,9 +7,8 @@
 Summary:        An SSH and SFTP protocol implementation together with clients and servers 
 Name:           %name
 Version:        %version
-%define directory_down %(echo %version|perl -n -e  '/^(\d+\.\d+).*$/; print \$1 ')
 Release:        %release
-Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%directory_down/%{progname}-%{version}.tar.bz2
+Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/8.1/%{progname}-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
