@@ -1,6 +1,6 @@
 %define name python-twisted-conch
 %define version 8.1.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define progname TwistedConch
 
