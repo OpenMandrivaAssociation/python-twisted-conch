@@ -1,10 +1,10 @@
 %define name python-twisted-conch
-%define version 8.1.0
-%define release %mkrel 2
+%define version 8.2.0
+%define release %mkrel 1
 
 %define progname TwistedConch
 
-Summary:        An SSH and SFTP protocol implementation together with clients and servers 
+Summary:        An SSH and SFTP protocol implementation together with clients and servers
 Name:           %name
 Version:        %version
 Release:        %release
@@ -17,15 +17,15 @@ BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
 
 %description
-Conch is an SSHv2 implementation written in Python. SSH is a protocol designed 
-to allow remote access to shells and commands, but it is generic enough to 
-allow everything from TCP forwarding to generic filesystem access. Since 
-conch is written in Python, it interfaces well with other Python projects, 
-such as Imagination. 
-Conch also includes a implementations of the telnet and vt102 protocols, as 
-well as support for rudamentary line editing behaviors. 
+Conch is an SSHv2 implementation written in Python. SSH is a protocol designed
+to allow remote access to shells and commands, but it is generic enough to
+allow everything from TCP forwarding to generic filesystem access. Since
+conch is written in Python, it interfaces well with other Python projects,
+such as Imagination.
+Conch also includes a implementations of the telnet and vt102 protocols, as
+well as support for rudamentary line editing behaviors.
 
-A new implementation of Twisted's Manhole application is also included, 
+A new implementation of Twisted's Manhole application is also included,
 featuring server-side input history and interactive syntax coloring.
 
 %prep
