@@ -1,6 +1,6 @@
 %define name python-twisted-conch
 %define version 8.2.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define progname TwistedConch
 
@@ -13,6 +13,7 @@ License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
 BuildRoot:      %{_tmppath}/%{name}-buildroot
+Patch0:		TwistedConch-8.2.0-python-2.6.patch
 BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
 
@@ -30,6 +31,7 @@ featuring server-side input history and interactive syntax coloring.
 
 %prep
 %setup -q -n %{progname}-%version
+%patch0	-p1
 
 %build
 %__python setup.py build
