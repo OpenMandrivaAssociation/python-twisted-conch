@@ -16,6 +16,7 @@ URL:            http://twistedmatrix.com/projects/conch
 BuildRoot:      %{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
+Requires:	pyasn1
 
 %description
 Conch is an SSHv2 implementation written in Python. SSH is a protocol designed
