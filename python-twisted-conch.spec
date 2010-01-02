@@ -1,6 +1,7 @@
 %define name python-twisted-conch
-%define version 8.2.0
-%define release %mkrel 2
+%define version 9.0.0
+%define release %mkrel 1
+%define mainver %(echo %{version} | sed -e 's/\\([0-9]*\\.[0-9]*\\)\\.[0-9]*/\\1/')
 
 %define progname TwistedConch
 
@@ -8,12 +9,11 @@ Summary:        An SSH and SFTP protocol implementation together with clients an
 Name:           %name
 Version:        %version
 Release:        %release
-Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/8.1/%{progname}-%{version}.tar.bz2
+Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%{mainver}/%{progname}-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
 BuildRoot:      %{_tmppath}/%{name}-buildroot
-Patch0:		TwistedConch-8.2.0-python-2.6.patch
 BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
 
@@ -30,8 +30,8 @@ A new implementation of Twisted's Manhole application is also included,
 featuring server-side input history and interactive syntax coloring.
 
 %prep
+echo %mainver
 %setup -q -n %{progname}-%version
-%patch0	-p1
 
 %build
 %__python setup.py build
