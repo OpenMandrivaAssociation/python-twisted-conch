@@ -1,5 +1,5 @@
 %define name python-twisted-conch
-%define version 9.0.0
+%define version 10.0.0
 %define release %mkrel 1
 %define mainver %(echo %{version} | sed -e 's/\\([0-9]*\\.[0-9]*\\)\\.[0-9]*/\\1/')
 
