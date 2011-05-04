@@ -1,6 +1,6 @@
 %define name python-twisted-conch
 %define version 10.1.0
-%define release %mkrel 2
+%define release %mkrel 3
 %define mainver %(echo %{version} | sed -e 's/\\([0-9]*\\.[0-9]*\\)\\.[0-9]*/\\1/')
 
 %define progname TwistedConch
