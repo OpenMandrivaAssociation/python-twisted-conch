@@ -1,6 +1,6 @@
 %define name python-twisted-conch
-%define version 10.1.0
-%define release %mkrel 3
+%define version 12.2.0
+%define release %mkrel 1
 %define mainver %(echo %{version} | sed -e 's/\\([0-9]*\\.[0-9]*\\)\\.[0-9]*/\\1/')
 
 %define progname TwistedConch
@@ -9,21 +9,22 @@ Summary:        An SSH and SFTP protocol implementation together with clients an
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
-Source0:        http://tmrc.mit.edu/mirror/twisted/Conch/%{mainver}/%{progname}-%{version}.tar.bz2
+Source0:        http://twistedmatrix.com/Releases/Conch/%{mainver}/%{progname}-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
-BuildRoot:      %{_tmppath}/%{name}-buildroot
 BuildRequires:	python-devel python-twisted-core
 Requires:       python-twisted-core
 Requires:	pyasn1
 
 %description
-Conch is an SSHv2 implementation written in Python. SSH is a protocol designed
-to allow remote access to shells and commands, but it is generic enough to allow
-everything from TCP forwarding to generic filesystem access. Since Conch is
-written in Python, it interfaces well with other Python projects such as
-Imagination. Conch also includes a implementations of the telnet and vt102
+Conch is an SSHv2 implementation written in Python.
+SSH is a protocol designed to allow remote access
+to shells and commands, but it is generic enough to allow
+everything from TCP forwarding to generic filesystem access.
+Since Conch is written in Python, it interfaces well with
+other Python projects such as Imagination.
+Conch also includes a implementations of the telnet and vt102
 protocols, as well as support for rudamentary line editing behaviors.
 A new implementation of Twisted's Manhole application is also included,
 featuring server-side input history and interactive syntax coloring.
@@ -41,9 +42,6 @@ featuring server-side input history and interactive syntax coloring.
 %__install -d %{buildroot}%{_mandir}/man1
 %__install -m 644 doc/man/*.1 %{buildroot}%{_mandir}/man1
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
 %defattr(0755,root,root,0755)
 %_bindir/*
@@ -54,5 +52,3 @@ featuring server-side input history and interactive syntax coloring.
 %py_platsitedir/twisted/plugins/*
 %py_platsitedir/*.egg-info
 %_mandir/man1/*
-
-
