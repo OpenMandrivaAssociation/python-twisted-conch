@@ -1,20 +1,17 @@
-%define name python-twisted-conch
-%define version 12.2.0
-%define release %mkrel 1
 %define mainver %(echo %{version} | sed -e 's/\\([0-9]*\\.[0-9]*\\)\\.[0-9]*/\\1/')
+
+%define progname TwistedConch
 
 # There is no debug here, but can't build as noarch,
 # since some 'twisted' modules are arch-dependent and all these modules
 # should be located in the same place
 %define debug_package %{nil}
 
-%define progname TwistedConch
-
 Summary:        An SSH and SFTP protocol implementation together with clients and servers
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Source0:        http://twistedmatrix.com/Releases/Conch/%{mainver}/%{progname}-%{version}.tar.bz2
+Name:           python-twisted-conch
+Version:        13.0.0
+Release:        1
+Source0:        http://twistedmatrix.com/Releases/Conch/%{mainver}/TwistedConch-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
 URL:            http://twistedmatrix.com/projects/conch
@@ -41,7 +38,6 @@ featuring server-side input history and interactive syntax coloring.
 %__python setup.py build
 
 %install
-%__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot} --install-purelib=%{py_platsitedir}
 
 %__install -d %{buildroot}%{_mandir}/man1
