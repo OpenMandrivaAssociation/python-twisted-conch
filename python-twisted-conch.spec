@@ -7,16 +7,17 @@
 # should be located in the same place
 %define debug_package %{nil}
 
-Summary:        An SSH and SFTP protocol implementation together with clients and servers
-Name:           python-twisted-conch
-Version:        13.0.0
-Release:        1
-Source0:        http://twistedmatrix.com/Releases/Conch/%{mainver}/TwistedConch-%{version}.tar.bz2
-License:        MIT
-Group:          Development/Python
-URL:            http://twistedmatrix.com/projects/conch
-BuildRequires:	python-devel python-twisted-core
-Requires:       python-twisted-core
+Summary:	An SSH and SFTP protocol implementation together with clients and servers
+Name:		python-twisted-conch
+Version:	13.0.0
+Release:	1
+License:	MIT
+Group:		Development/Python
+Url:		http://twistedmatrix.com/projects/conch
+Source0:	http://twistedmatrix.com/Releases/Conch/%{mainver}/TwistedConch-%{version}.tar.bz2
+BuildRequires:	python-twisted-core
+BuildRequires:	pkgconfig(python)
+Requires:	python-twisted-core
 Requires:	pyasn1
 
 %description
@@ -32,7 +33,7 @@ A new implementation of Twisted's Manhole application is also included,
 featuring server-side input history and interactive syntax coloring.
 
 %prep
-%setup -q -n %{progname}-%{version}
+%setup -qn %{progname}-%{version}
 
 %build
 %__python setup.py build
@@ -45,11 +46,12 @@ featuring server-side input history and interactive syntax coloring.
 
 %files
 %defattr(0755,root,root,0755)
-%_bindir/*
+%{_bindir}/*
 %defattr(0644,root,root,0755)
 %doc LICENSE README doc/*
-%dir %py_platsitedir/twisted/conch
-%py_platsitedir/twisted/conch/*
-%py_platsitedir/twisted/plugins/*
-%py_platsitedir/*.egg-info
-%_mandir/man1/*
+%dir %{py_platsitedir}/twisted/conch
+%{py_platsitedir}/twisted/conch/*
+%{py_platsitedir}/twisted/plugins/*
+%{py_platsitedir}/*.egg-info
+%{_mandir}/man1/*
+
