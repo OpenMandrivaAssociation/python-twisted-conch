@@ -10,7 +10,7 @@
 Summary:        An SSH and SFTP protocol implementation together with clients and servers
 Name:           python-twisted-conch
 Version:        13.0.0
-Release:        1
+Release:        2
 Source0:        http://twistedmatrix.com/Releases/Conch/%{mainver}/TwistedConch-%{version}.tar.bz2
 License:        MIT
 Group:          Development/Python
