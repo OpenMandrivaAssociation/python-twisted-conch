@@ -8,13 +8,14 @@
 %define debug_package %{nil}
 
 Summary:	An SSH and SFTP protocol implementation together with clients and servers
+
 Name:		python-twisted-conch
-Version:	13.2.0
-Release:	2
+Version:	14.0.0
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://twistedmatrix.com/projects/conch
-Source0:	http://twistedmatrix.com/Releases/Conch/13.2/TwistedConch-%{version}.tar.bz2
+Source0:	http://twistedmatrix.com/Releases/Conch/14.0/TwistedConch-%{version}.tar.bz2
 BuildRequires:	python-twisted-core
 BuildRequires:	pkgconfig(python)
 Requires:	python-twisted-core
@@ -54,6 +55,7 @@ featuring server-side input history and interactive syntax coloring.
 %{py_platsitedir}/twisted/plugins/*
 %{py_platsitedir}/*.egg-info
 %{_mandir}/man1/*
+
 
 
 
