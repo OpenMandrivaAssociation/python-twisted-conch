@@ -13,7 +13,7 @@ Version:	13.2.0
 Release:	2
 License:	MIT
 Group:		Development/Python
-Url:		http://twistedmatrix.com/projects/conch
+Url:		https://twistedmatrix.com/projects/conch
 Source0:	http://twistedmatrix.com/Releases/Conch/13.2/TwistedConch-%{version}.tar.bz2
 BuildRequires:	python-twisted-core
 BuildRequires:	pkgconfig(python)
